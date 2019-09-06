@@ -1,4 +1,4 @@
-package com.tzh.utils;
+package com.jzy.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -7,30 +7,30 @@ import java.util.Date;
 
 public class DateUtils {
 	
-	// date ÈÕÆÚ  Calendar ÈÕÀú
+	// date ï¿½ï¿½ï¿½ï¿½  Calendar ï¿½ï¿½ï¿½ï¿½
 	public static int getAge(Calendar birth) {
-		//µ±Ç°ÈÕÆÚµÄÄê·İ
+		//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½
 		Calendar now = formateDateToCalendar(new Date());
 		int j = now.get(Calendar.YEAR);
-		//ÉúÈÕÄê·İ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		int i = birth.get(Calendar.YEAR);
 		return j - i;
 	}
 	
 	public static int getAge(Date birth) {
-		//µ±Ç°µÄÄê·İ
+		//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½
 		Calendar now = formateDateToCalendar(new Date());
 		int j = now.get(Calendar.YEAR);
-		//ÉúÈÕÄê·İ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		Calendar calendar = formateDateToCalendar(birth);
 		int i = calendar.get(Calendar.YEAR);
 		return j - i;
 	}
 	public static int getAge(String birth) {
-		//µ±Ç°µÄÄê·İ
+		//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½
 		Calendar now = formateDateToCalendar(new Date());
 		int j = now.get(Calendar.YEAR);
-		//ÉúÈÕÄê·İ
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		Date date = formateStringToDate(birth);
 		Calendar calendar = formateDateToCalendar(date);
 		int i = calendar.get(Calendar.YEAR);
@@ -53,6 +53,16 @@ public class DateUtils {
 		}
 		return date;
 	}
+	public static Date formateStringToDateAll(String str) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		Date date = null;
+		try {
+			date = dateFormat.parse(str);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return date;
+	}
 	
 	public static int getFutureDays(String future) {
 		
@@ -68,13 +78,13 @@ public class DateUtils {
 		return day;
 	}
 	/**
-	 * ÅĞ¶Ï¸ø¶¨ÈÕÆÚÊÇ·ñÊÇµ±Ìì
+	 * ï¿½Ğ¶Ï¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Çµï¿½ï¿½ï¿½
 	 * @param str
 	 * @return
 	 */
 	public static boolean isToday(String str) {
 		/*
-		 * »ñÈ¡ÈÕÆÚµÄÄê ÔÂ ÈÕ
+		 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
 		 * Calendar instance = Calendar.getInstance();
 		instance.setTime(new Date());
 		instance.get(Calendar.YEAR);
@@ -88,7 +98,7 @@ public class DateUtils {
 		return false;
 	}
 	/**
-	 * ÅĞ¶Ïµ±Ç°¸ø¶¨µÄÈÕÆÚÊÇ·ñÔÚ±¾ÖÜÖ®ÄÚ
+	 * ï¿½Ğ¶Ïµï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ú±ï¿½ï¿½ï¿½Ö®ï¿½ï¿½
 	 * @return
 	 */
 	public static boolean isDayInWeek(String date) {
@@ -112,7 +122,7 @@ public class DateUtils {
 	}
 	
 	/***
-	 * ¸ø¶¨Ê±¼ä¶ÔÏó£¬³õÊ¼»¯µ½¸ÃÄê³õµÄ1ÔÂ1ÈÕ0Ê±0·Ö0Ãë0ºÁÃë
+	 * ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ó£¬³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½1ï¿½ï¿½0Ê±0ï¿½ï¿½0ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static void  setInitDate(String str) {
 		Date stringToDate = formateStringToDate(str);

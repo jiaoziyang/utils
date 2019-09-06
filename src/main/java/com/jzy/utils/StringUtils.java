@@ -1,4 +1,4 @@
-package com.tzh.utils;
+package com.jzy.utils;
 
 import java.util.Random;
 import java.util.regex.Matcher;
@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class StringUtils {
 
 	/***
-	 * ÅÐ¶ÏÔ´×Ö·û´®ÊÇ·ñÓÐÖµ£¬¿ÕÒýºÅÒ²ËãÃ»Öµ
+	 * ï¿½Ð¶ï¿½Ô´ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½Ã»Öµ
 	 */
 	public static boolean isNull(String str) {
 		if(str!=null&&str.length()>0) {
@@ -16,7 +16,7 @@ public class StringUtils {
 		return false;
 	}
 	/***
-	 * ÅÐ¶ÏÔ´×Ö·û´®ÊÇ·ñÓÐÖµ£¬¿ÕÒýºÅºÍ¿Õ¸ñÒ²ËãÃ»Öµ"" "   "
+	 * ï¿½Ð¶ï¿½Ô´ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÍ¿Õ¸ï¿½Ò²ï¿½ï¿½Ã»Öµ"" "   "
 	 */
 	public static boolean isBlank(String str) {
 		//trim()
@@ -27,11 +27,11 @@ public class StringUtils {
 	}
 
 	/***
-	 * ÅÐ¶ÏÊÇ·ñÎªÊÖ»úºÅÂë
+	 * ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Îªï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 */
 	public static boolean isPhone(String str) {
-		//ÏÈÅÐ¶Ï×Ö·û´®²»ÊÇ¿ÕµÄ
+		//ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿Õµï¿½
 		boolean blank = isBlank(str);
 		if(!blank) {
 			return false;
@@ -43,14 +43,32 @@ public class StringUtils {
 		}
 		return false;
 	}
+	/***
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static boolean isNymber(String str) {
+		//ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿Õµï¿½
+		boolean blank = isBlank(str);
+		if(!blank) {
+			return false;
+		}
+		Pattern pattern = Pattern.compile("^[0-9]+$");
+		Matcher matcher = pattern.matcher(str);
+		if(matcher.matches()) {
+			return true;
+		}
+		return false;
+	}
 
 	/***
-	 * ÅÐ¶ÏÊÇ·ñÎªµç×ÓÓÊÏä
+	 * ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * xxx@ss.ss
 	 * ^(\w+((-\w+)|(\.\w+))*)\+\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$  
 	 */
 	public static boolean isEmail(String str) {
-		//ÏÈÅÐ¶Ï×Ö·û´®²»ÊÇ¿ÕµÄ
+		//ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿Õµï¿½
 		boolean blank = isBlank(str);
 		if(!blank) {
 			return false;
@@ -65,12 +83,12 @@ public class StringUtils {
 	}
 
 	/***
-	 * ÅÐ¶Ï×Ö·û´®È«ÊÇ×ÖÄ¸
+	 * ï¿½Ð¶ï¿½ï¿½Ö·ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½Ä¸
 	 * @param str
 	 * @return
 	 */
 	public static boolean isEnglish(String str) {
-		//ÏÈÅÐ¶Ï×Ö·û´®²»ÊÇ¿ÕµÄ
+		//ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿Õµï¿½
 		boolean blank = isBlank(str);
 		if(!blank) {
 			return false;
@@ -85,7 +103,7 @@ public class StringUtils {
 		return false;
 	}
 	/***
-	 * »ñÈ¡nÎ»Ëæ»úÓ¢ÎÄ×Ö·û´®
+	 * ï¿½ï¿½È¡nÎ»ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
 	 * @return
 	 */
 	public static String getRandomStr(int length) {
@@ -96,9 +114,9 @@ public class StringUtils {
 		StringBuffer buffer = new StringBuffer();
 		Random random = new Random();
 		for (int i = 0; i < length; i++) {
-			//·µ»ØÐ¡ÓÚlen²ÎÊýµÄÕûÊýÖµ
+			//ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½lenï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 			int nextInt = random.nextInt(len);
-			//È¡¾ø¶ÔÖµ
+			//È¡ï¿½ï¿½ï¿½ï¿½Öµ
 			int abs = Math.abs(nextInt);
 			char c = arr[abs];
 			buffer.append(c);
@@ -106,7 +124,7 @@ public class StringUtils {
 		return buffer.toString();
 	}
 	/***
-	 * »ñÈ¡nÎ»Ëæ»úÓ¢ÎÄ×Ö·û´®ºÍÊý×Ö
+	 * ï¿½ï¿½È¡nÎ»ï¿½ï¿½ï¿½Ó¢ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @return
 	 */
 	public static String getRandomStrAndNumber(int length) {
@@ -118,9 +136,9 @@ public class StringUtils {
 		StringBuffer buffer = new StringBuffer();
 		Random random = new Random();
 		for (int i = 0; i < length; i++) {
-			//·µ»ØÐ¡ÓÚlen²ÎÊýµÄÕûÊýÖµ
+			//ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½lenï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 			int nextInt = random.nextInt(len);
-			//È¡¾ø¶ÔÖµ
+			//È¡ï¿½ï¿½ï¿½ï¿½Öµ
 			int abs = Math.abs(nextInt);
 			char c = arr[abs];
 			buffer.append(c);
@@ -128,21 +146,21 @@ public class StringUtils {
 		return buffer.toString();
 	}
 	/****
-	 * »ñÈ¡n¸öËæ»úÖÐÎÄ×Ö·û´®
+	 * ï¿½ï¿½È¡nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
 	 */
 	public static String getRandomChinese(int length) {
-		// UnicodeÖÐºº×ÖËùÕ¼ÇøÓò\u4e00-\u9fa5,½«4e00ºÍ9fa5×ªÎª10½øÖÆ
+		// Unicodeï¿½Ðºï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½\u4e00-\u9fa5,ï¿½ï¿½4e00ï¿½ï¿½9fa5×ªÎª10ï¿½ï¿½ï¿½ï¿½
 		int start = Integer.parseInt("4e00", 16);
 		int end = Integer.parseInt("9fa5", 16);
-		// Êä³ö½á¹û
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		// 19968
 		// 40869
-		// Ëæ»úÊý
+		// ï¿½ï¿½ï¿½ï¿½ï¿½
 		StringBuffer buffer = new StringBuffer();
 		Random random = new Random();
 		for (int i = 0; i < length; i++) {
 			int code = random.nextInt(end - start + 1) + start;
-			// ×ªÎª×Ö·û
+			// ×ªÎªï¿½Ö·ï¿½
 			String str = new String(new char[] { (char) code });
 			buffer.append(str);
 		}
@@ -150,7 +168,7 @@ public class StringUtils {
 	}
 
 	/***
-	 * ÌáÈ¡²¿·Ö×Ö·û´®
+	 * ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
 	 * http://news.cnstock.com/newswww,yw-201908-4412690.htm
 	 * @return
 	 */

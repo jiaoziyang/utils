@@ -1,10 +1,10 @@
-package com.tzh.test;
+package com.jzy.test;
 
 import java.util.Random;
 
 import org.junit.Test;
 
-import com.tzh.utils.StringUtils;
+import com.jzy.utils.StringUtils;
 
 public class StringUtilsTest {
 	

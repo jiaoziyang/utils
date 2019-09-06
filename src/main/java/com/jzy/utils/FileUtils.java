@@ -1,4 +1,4 @@
-package com.tzh.utils;
+package com.jzy.utils;
 
 import java.io.File;
 import java.math.RoundingMode;
@@ -6,7 +6,7 @@ import java.text.NumberFormat;
 
 public class FileUtils {
 	/***
-	 * 获取文件扩展名 后缀名
+	 * 锟斤拷取锟侥硷拷锟斤拷展锟斤拷 锟斤拷缀锟斤拷
 	 * @return
 	 * D:/test/test.txt
 	 */
@@ -18,31 +18,31 @@ public class FileUtils {
 			String substring = path.substring(indexOf,path.length());
 			return substring;
 		}else {
-			return "该路径不对或者不是普通文件";
+			return "锟斤拷路锟斤拷锟斤拷锟皆伙拷锟竭诧拷锟斤拷锟斤拷通锟侥硷拷";
 		}
 	}
 	/***
-	 * 删除文件，如果是目录，则下面的文件和所有子目录中的文件都要删除
+	 * 删锟斤拷锟侥硷拷锟斤拷锟斤拷锟斤拷锟侥柯硷拷锟斤拷锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷锟斤拷锟斤拷锟斤拷目录锟叫碉拷锟侥硷拷锟斤拷要删锟斤拷
 	 */
 	public static void deleteFiles(String path) {
 		File file = new File(path);
 		if(file.isFile()) {
 			file.delete();
 		}else if(file.isDirectory()){
-			//获取目录下的所有文件 包括目录
+			//锟斤拷取目录锟铰碉拷锟斤拷锟斤拷锟侥硷拷 锟斤拷锟斤拷目录
 			File[] listFiles = file.listFiles();
 			for (File file2 : listFiles) {
 				String path2 = file2.getPath();
-				//d递归删除文件
+				//d锟捷癸拷删锟斤拷锟侥硷拷
 				deleteFiles(path2);
 			}
 		}
-		//删除空文件夹
+		//删锟斤拷锟斤拷锟侥硷拷锟斤拷
 		file.delete();
 	}
 
 	/***
-	 * 获取操作系统用户目录
+	 * 锟斤拷取锟斤拷锟斤拷系统锟矫伙拷目录
 	 */
 	public static String getHomeDirectory() {
 		String property = System.getProperty("user.home");
@@ -74,9 +74,9 @@ public class FileUtils {
 			break;
 		}
 		NumberFormat data=NumberFormat.getNumberInstance();
-		//保留两位小数
+		//锟斤拷锟斤拷锟斤拷位小锟斤拷
 		data.setMaximumFractionDigits(4);
-		// 如果不需要四舍五入，可以使用RoundingMode.DOWN
+		// 锟斤拷锟斤拷锟斤拷锟揭拷锟斤拷锟斤拷锟斤拷耄拷锟斤拷锟绞癸拷锟絉oundingMode.DOWN
 		data.setRoundingMode(RoundingMode.UP);
 
 		String format = data.format(size);

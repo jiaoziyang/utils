@@ -1,11 +1,11 @@
-package com.tzh.test;
+package com.jzy.test;
 
 import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.Test;
 
-import com.tzh.utils.DateUtils;
+import com.jzy.utils.DateUtils;
 
 public class TestDateUtils {
 	

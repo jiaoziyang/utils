@@ -1,4 +1,4 @@
-package com.tzh.utils;
+package com.jzy.utils;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -14,30 +14,30 @@ import java.io.RandomAccessFile;
 import java.io.Reader;
 
 /**
- * Java¶ÁÈ¡ÎÄ¼þ¹¤¾ßÀà¡ª¡ªIO
- * <ÇëÌæ»»³É¹¦ÄÜÃèÊö> <br>
- * <ÇëÌæ»»³ÉÏêÏ¸ÃèÊö>
+ * Javaï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à¡ªï¿½ï¿½IO
+ * <ï¿½ï¿½ï¿½æ»»ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½> <br>
+ * <ï¿½ï¿½ï¿½æ»»ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½>
  * @author caizh
  * @since [1.0.0]
- * @version [1.0.0,2017Äê2ÔÂ6ÈÕ]
+ * @version [1.0.0,2017ï¿½ï¿½2ï¿½ï¿½6ï¿½ï¿½]
  */
 public class IOToFileUtils {
 
     /**
-     * ÒÔ×Ö½ÚÎªµ¥Î»¶ÁÈ¡ÎÄ¼þ£¬³£ÓÃÓÚ¶ÁÈ¡¶þ½øÖÆÎÄ¼þ£¬Èç£ºÍ¼Æ¬¡¢ÉùÒô¡¢Ó°ÏñµÈ
-     * <ÇëÌæ»»³É¹¦ÄÜÃèÊö> <br>
-     * <ÇëÌæ»»³ÉÏêÏ¸ÃèÊö>
+     * ï¿½ï¿½ï¿½Ö½ï¿½Îªï¿½ï¿½Î»ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ç£ºÍ¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½
+     * <ï¿½ï¿½ï¿½æ»»ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½> <br>
+     * <ï¿½ï¿½ï¿½æ»»ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½>
      * @param fileName
      * @author caizh
      * @since [1.0.0]
-     * @version [1.0.0,2017Äê2ÔÂ6ÈÕ]
+     * @version [1.0.0,2017ï¿½ï¿½2ï¿½ï¿½6ï¿½ï¿½]
      */
     public static void readFileByBytes(String fileName){
         File file = new File(fileName);
         InputStream in = null;
         try{
-            System.out.println("ÒÔ×Ö½ÚÎªµ¥Î»¶ÁÈ¡ÎÄ¼þÄÚÈÝ£¬Ò»´Î¶ÁÒ»¸ö×Ö½Ú£º");
-            //Ò»´Î¶ÁÈ¡Ò»¸ö×Ö½Ú
+            System.out.println("ï¿½ï¿½ï¿½Ö½ï¿½Îªï¿½ï¿½Î»ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ý£ï¿½Ò»ï¿½Î¶ï¿½Ò»ï¿½ï¿½ï¿½Ö½Ú£ï¿½");
+            //Ò»ï¿½Î¶ï¿½È¡Ò»ï¿½ï¿½ï¿½Ö½ï¿½
             in = new FileInputStream(file);
             int tempbyte;
             while((tempbyte=in.read())!= -1){
@@ -49,13 +49,13 @@ public class IOToFileUtils {
             return;
         }
         try{
-            System.out.println("ÒÔ×Ö½ÚÎªµ¥Î»¶ÁÈ¡ÎÄ¼þÄÚÈÝ£¬Ò»´Î¶ÁÈ¡¶à¸ö×Ö½Ú£º");
-            //Ò»´Î¶ÁÈ¡¶à¸ö×Ö½Ú
+            System.out.println("ï¿½ï¿½ï¿½Ö½ï¿½Îªï¿½ï¿½Î»ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ý£ï¿½Ò»ï¿½Î¶ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ö½Ú£ï¿½");
+            //Ò»ï¿½Î¶ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ö½ï¿½
             byte[] tempbytes = new byte[1024];
             int byteread = 0;
             in = new FileInputStream(fileName);
             showAvailableBytes(in);
-            //¶ÁÈë¶à¸ö×Ö½Úµ½×Ö½ÚÊý×éÖÐ£¬bytereadÎªÒ»´Î¶ÁÈëµÄ×Ö½ÚÊý
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö½Úµï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½bytereadÎªÒ»ï¿½Î¶ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½
             while((byteread=in.read(tempbytes))!= -1){
                 System.out.write(tempbytes, 0, byteread);;
             }
@@ -73,26 +73,26 @@ public class IOToFileUtils {
     }
 
     /**
-     * ÒÔ×Ö·ûÎªµ¥Î»¶ÁÈ¡ÎÄ¼þ£¬³£ÓÃÓÚ¶ÁÈ¡ÎÄ±¾£¬Êý×ÖµÈÀàÐÍµÄÎÄ¼þ
-     * <ÇëÌæ»»³É¹¦ÄÜÃèÊö> <br>
-     * <ÇëÌæ»»³ÉÏêÏ¸ÃèÊö>
+     * ï¿½ï¿½ï¿½Ö·ï¿½Îªï¿½ï¿½Î»ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½È¡ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½Ä¼ï¿½
+     * <ï¿½ï¿½ï¿½æ»»ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½> <br>
+     * <ï¿½ï¿½ï¿½æ»»ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½>
      * @param fileName
      * @author caizh
      * @since [1.0.0]
-     * @version [1.0.0,2017Äê2ÔÂ6ÈÕ]
+     * @version [1.0.0,2017ï¿½ï¿½2ï¿½ï¿½6ï¿½ï¿½]
      */
     public static void readFileByChars(String fileName){
         File file = new File(fileName);
         Reader reader = null;
         try{
-            System.out.println("ÒÔ×Ö·ûÎªµ¥Î»¶ÁÈ¡ÎÄ¼þÄÚÈÝ£¬Ò»´Î¶ÁÈ¡Ò»¸ö×Ö·û£º");
-            //Ò»´Î¶ÁÈ¡Ò»¸ö×Ö·û
+            System.out.println("ï¿½ï¿½ï¿½Ö·ï¿½Îªï¿½ï¿½Î»ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ý£ï¿½Ò»ï¿½Î¶ï¿½È¡Ò»ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½");
+            //Ò»ï¿½Î¶ï¿½È¡Ò»ï¿½ï¿½ï¿½Ö·ï¿½
             reader = new InputStreamReader(new FileInputStream(file));
             int tempchar;
             while((tempchar=reader.read())!= -1){
-                //¶ÔÓÚwindowÏÂ£¬/r/nÕâÁ½¸ö×Ö·ûÔÚÒ»ÆðÊ±£¬±íÊ¾Ò»¸ö»»ÐÐ¡£
-                //µ«Èç¹ûÕâÁ½¸ö×Ö·û·Ö¿ªÏÔÊ¾ÊÇ£¬»á»»Á½´ÎÐÐ¡£
-                //Òò´Ë£¬ÆÁ±Îµô/r,»òÕßÆÁ±Î/n¡£·ñÔò£¬½«»á¶à³öºÜ¶à¿ÕÐÐ
+                //ï¿½ï¿½ï¿½ï¿½windowï¿½Â£ï¿½/r/nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ê¾Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½
+                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½Ö¿ï¿½ï¿½ï¿½Ê¾ï¿½Ç£ï¿½ï¿½á»»ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½
+                //ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½Îµï¿½/r,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/nï¿½ï¿½ï¿½ï¿½ï¿½ò£¬½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½ï¿½ï¿½ï¿½
                 if(((char)tempchar)!= '\r'){
                     System.out.print((char)tempchar);
                 }
@@ -102,14 +102,14 @@ public class IOToFileUtils {
             e.printStackTrace();  
         }
         try{
-            System.out.println("ÒÔ×Ö·ûÎªµ¥Î»¶ÁÈ¡ÎÄ¼þÄÚÈÝ£¬Ò»´Î¶ÁÈ¡¶à¸ö×Ö·û£º");
-            //Ò»´Î¶ÁÈ¡¶à¸ö×Ö·û
+            System.out.println("ï¿½ï¿½ï¿½Ö·ï¿½Îªï¿½ï¿½Î»ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ý£ï¿½Ò»ï¿½Î¶ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½");
+            //Ò»ï¿½Î¶ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ö·ï¿½
             char[] tempchars = new char[30];
             int charread = 0;
             reader = new InputStreamReader(new FileInputStream(fileName));
-            //¶ÁÈ¡¶à¸ö×Ö·ûµ½×Ö·ûÊý×éÖÐ£¬charreadÎªÒ»´Î¶ÁÈ¡×Ö·ûÊý
+            //ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½charreadÎªÒ»ï¿½Î¶ï¿½È¡ï¿½Ö·ï¿½ï¿½ï¿½
             while((charread=reader.read(tempchars))!=-1){
-                //ÆÁ±Îµô/r²»ÏÔÊ¾
+                //ï¿½ï¿½ï¿½Îµï¿½/rï¿½ï¿½ï¿½ï¿½Ê¾
                 if((charread == tempchars.length) && (tempchars[tempchars.length-1]!='\r')){
                     System.out.print(tempchars);
                 }else{
@@ -136,25 +136,25 @@ public class IOToFileUtils {
     }
 
     /**
-     * ÒÔÐÐÎªµ¥Î»¶ÁÈ¡ÎÄ¼þ£¬³£ÓÃÓÚ¶ÁÈ¡ÃæÏòÐÐµÄ¸ñÊ½»¯ÎÄ¼þ
-     * <ÇëÌæ»»³É¹¦ÄÜÃèÊö> <br>
-     * <ÇëÌæ»»³ÉÏêÏ¸ÃèÊö>
+     * ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Î»ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ¸ï¿½Ê½ï¿½ï¿½ï¿½Ä¼ï¿½
+     * <ï¿½ï¿½ï¿½æ»»ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½> <br>
+     * <ï¿½ï¿½ï¿½æ»»ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½>
      * @param fileName
      * @author caizh
      * @since [1.0.0]
-     * @version [1.0.0,2017Äê2ÔÂ6ÈÕ]
+     * @version [1.0.0,2017ï¿½ï¿½2ï¿½ï¿½6ï¿½ï¿½]
      */
     public static void readFileByLines(String fileName){
         File file = new File(fileName);
         BufferedReader reader = null;
         try{
-            System.out.println("ÒÔÐÐÎªµ¥Î»¶ÁÈ¡ÎÄ¼þÄÚÈÝ£¬Ò»´Î¶ÁÈ¡Ò»ÕûÐÐ£º");
+            System.out.println("ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Î»ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ý£ï¿½Ò»ï¿½Î¶ï¿½È¡Ò»ï¿½ï¿½ï¿½Ð£ï¿½");
             reader = new BufferedReader(new FileReader(file));
             String tempString = null;
             int line = 1;
-            //Ò»´Î¶ÁÈëÒ»ÐÐ£¬Ö±µ½¶ÁÈënullÎªÎÄ¼þ½áÊø
+            //Ò»ï¿½Î¶ï¿½ï¿½ï¿½Ò»ï¿½Ð£ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½nullÎªï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
             while((tempString = reader.readLine())!=null){
-                //ÏÔÊ¾ÐÐºÅ
+                //ï¿½ï¿½Ê¾ï¿½Ðºï¿½
                 System.out.println("line "+line+":"+tempString);
                 line++;
             }
@@ -165,30 +165,30 @@ public class IOToFileUtils {
     }
 
     /**
-     * Ëæ»ú¶ÁÈ¡ÎÄ¼þÄÚÈÝ
-     * <ÇëÌæ»»³É¹¦ÄÜÃèÊö> <br>
-     * <ÇëÌæ»»³ÉÏêÏ¸ÃèÊö>
+     * ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
+     * <ï¿½ï¿½ï¿½æ»»ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½> <br>
+     * <ï¿½ï¿½ï¿½æ»»ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½>
      * @param fileName
      * @author caizh
      * @since [1.0.0]
-     * @version [1.0.0,2017Äê2ÔÂ6ÈÕ]
+     * @version [1.0.0,2017ï¿½ï¿½2ï¿½ï¿½6ï¿½ï¿½]
      */
     public static void readFileByRandomAccess(String fileName){
         RandomAccessFile randomFile = null;
         try{
-            System.out.println("Ëæ»ú¶ÁÈ¡Ò»¶ÎÎÄ¼þÄÚÈÝ£º");
-            //´ò¿ªÒ»¸öËæ»ú·ÃÎÊÎÄ¼þÁ÷£¬°´Ö»¶Á·½Ê½
+            System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½È¡Ò»ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ý£ï¿½");
+            //ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½Ê½
             randomFile = new RandomAccessFile(fileName,"r");
-            //ÎÄ¼þ³¤¶È£¬×Ö½ÚÊý
+            //ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½Ö½ï¿½ï¿½ï¿½
             long fileLength = randomFile.length();
-            //¶ÁÎÄ¼þµÄÆðÊ¼Î»ÖÃ
+            //ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼Î»ï¿½ï¿½
             int beginIndex = (fileLength>4)?4:0;
-            //½«¶ÁÈ¡ÎÄ¼þµÄ¿ªÊ¼Î»ÖÃÒÆµ½beginIndexµÄÎ»ÖÃÉÏ
+            //ï¿½ï¿½ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½Ä¿ï¿½Ê¼Î»ï¿½ï¿½ï¿½Æµï¿½beginIndexï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½
             randomFile.seek(beginIndex);
             byte[] bytes = new byte[10];
             int byteread = 0;
-            //Ò»´Î¶ÁÈ¡10¸ö×Ö½Ú£¬Èç¹ûÎÄ¼þÄÚÈÝ²»×ã10¸ö×Ö½Ú£¬Ôò¶ÁÈ¡Ê£ÏÂµÄ×Ö½Ú¡£
-            //½«Ò»´Î¶ÁÈ¡µÄ×Ö½ÚÊý¸³¸øbyteread
+            //Ò»ï¿½Î¶ï¿½È¡10ï¿½ï¿½ï¿½Ö½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½10ï¿½ï¿½ï¿½Ö½Ú£ï¿½ï¿½ï¿½ï¿½È¡Ê£ï¿½Âµï¿½ï¿½Ö½Ú¡ï¿½
+            //ï¿½ï¿½Ò»ï¿½Î¶ï¿½È¡ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½byteread
             while((byteread = randomFile.read(bytes))!= -1){
                 System.out.write(bytes,0,byteread);
             }
@@ -206,39 +206,39 @@ public class IOToFileUtils {
     }
 
     /**
-     * ÏÔÊ¾ÊäÈëÁ÷ÖÐ»¹Ê£µÄ×Ö½ÚÊý
-     * <ÇëÌæ»»³É¹¦ÄÜÃèÊö> <br>
-     * <ÇëÌæ»»³ÉÏêÏ¸ÃèÊö>
+     * ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½Ê£ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½
+     * <ï¿½ï¿½ï¿½æ»»ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½> <br>
+     * <ï¿½ï¿½ï¿½æ»»ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½>
      * @param in
      * @author caizh
      * @since [1.0.0]
-     * @version [1.0.0,2017Äê2ÔÂ6ÈÕ]
+     * @version [1.0.0,2017ï¿½ï¿½2ï¿½ï¿½6ï¿½ï¿½]
      */
     public static void showAvailableBytes(InputStream in){
         try{
-            System.out.println("µ±Ç°×Ö½ÚÊäÈëÁ÷ÖÐµÄ×Ö½ÚÊýÎª£º"+in.available());
+            System.out.println("ï¿½ï¿½Ç°ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½Ö½ï¿½ï¿½ï¿½Îªï¿½ï¿½"+in.available());
         }catch(Exception e){
             e.printStackTrace();
         }
     }
 
     /**
-     * ½«ÄÚÈÝ×·¼Óµ½ÎÄ¼þÎ²²¿  A·½·¨£ºÊ¹ÓÃRandomAccessFile
-     * <ÇëÌæ»»³É¹¦ÄÜÃèÊö> <br>
-     * <ÇëÌæ»»³ÉÏêÏ¸ÃèÊö>
-     * @param fileName °üº¬ÍêÕûÂ·¾¶µÄÎÄ¼þÃû
-     * @param content Òª×·¼ÓµÄÄÚÈÝ
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×·ï¿½Óµï¿½ï¿½Ä¼ï¿½Î²ï¿½ï¿½  Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½RandomAccessFile
+     * <ï¿½ï¿½ï¿½æ»»ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½> <br>
+     * <ï¿½ï¿½ï¿½æ»»ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½>
+     * @param fileName ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
+     * @param content Òª×·ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½
      * @author caizh
      * @since [1.0.0]
-     * @version [1.0.0,2017Äê2ÔÂ6ÈÕ]
+     * @version [1.0.0,2017ï¿½ï¿½2ï¿½ï¿½6ï¿½ï¿½]
      */
     public static void appendToFile_A(String fileName,String content){
         try{
-            //´ò¿ªÒ»¸öËæ»ú·ÃÎÊµÄÎÄ¼þÁ÷£¬°´¶ÁÐ´·½Ê½
+            //ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ê½
             RandomAccessFile randomFile = new RandomAccessFile(fileName,"rw");
-            //ÎÄ¼þ³¤¶È£¬×Ö½ÚÊý
+            //ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½Ö½ï¿½ï¿½ï¿½
             long fileLength = randomFile.length();
-            //½«Ð´ÎÄ¼þÖ¸ÕëÒÆµ½ÎÄ¼þÎ²²¿
+            //ï¿½ï¿½Ð´ï¿½Ä¼ï¿½Ö¸ï¿½ï¿½ï¿½Æµï¿½ï¿½Ä¼ï¿½Î²ï¿½ï¿½
             randomFile.seek(fileLength);
             randomFile.writeBytes(content);
             randomFile.close();
@@ -248,18 +248,18 @@ public class IOToFileUtils {
     }
 
     /**
-     * ½«ÄÚÈÝ×·¼Óµ½ÎÄ¼þÎ²²¿  B·½·¨£ºÊ¹ÓÃFileWriter
-     * <ÇëÌæ»»³É¹¦ÄÜÃèÊö> <br>
-     * <ÇëÌæ»»³ÉÏêÏ¸ÃèÊö>
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×·ï¿½Óµï¿½ï¿½Ä¼ï¿½Î²ï¿½ï¿½  Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½FileWriter
+     * <ï¿½ï¿½ï¿½æ»»ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½> <br>
+     * <ï¿½ï¿½ï¿½æ»»ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½>
      * @param fileName
      * @param content
      * @author caizh
      * @since [1.0.0]
-     * @version [1.0.0,2017Äê2ÔÂ6ÈÕ]
+     * @version [1.0.0,2017ï¿½ï¿½2ï¿½ï¿½6ï¿½ï¿½]
      */
     public static void appendToFile_B(String fileName,String content){
         try{
-            //´ò¿ªÒ»¸öÐ´ÎÄ¼þÆ÷£¬¹¹Ôìº¯ÊýÖÐµÄµÚ¶þ¸ö²ÎÊýtrue±íÊ¾ÒÔ×·¼ÓÐÎÊ½Ð´ÎÄ¼þ
+            //ï¿½ï¿½Ò»ï¿½ï¿½Ð´ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ìº¯ï¿½ï¿½ï¿½ÐµÄµÚ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½Ê¾ï¿½ï¿½×·ï¿½ï¿½ï¿½ï¿½Ê½Ð´ï¿½Ä¼ï¿½
             FileWriter writer = new FileWriter(fileName,true);            
             writer.write(content);
             writer.close();
@@ -269,14 +269,14 @@ public class IOToFileUtils {
     }
 
     /**
-     * ½«ÄÚÈÝ×·¼Óµ½ÎÄ¼þÎ²²¿ C·½·¨£ºÊ¹ÓÃBufferedWriter
-     * <ÇëÌæ»»³É¹¦ÄÜÃèÊö> <br>
-     * <ÇëÌæ»»³ÉÏêÏ¸ÃèÊö>
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×·ï¿½Óµï¿½ï¿½Ä¼ï¿½Î²ï¿½ï¿½ Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½BufferedWriter
+     * <ï¿½ï¿½ï¿½æ»»ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½> <br>
+     * <ï¿½ï¿½ï¿½æ»»ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ï¿½>
      * @param fileName
      * @param content
      * @author caizh
      * @since [1.0.0]
-     * @version [1.0.0,2017Äê2ÔÂ10ÈÕ]
+     * @version [1.0.0,2017ï¿½ï¿½2ï¿½ï¿½10ï¿½ï¿½]
      */
     public static void appendToFile_C(String fileName,String content){
 
